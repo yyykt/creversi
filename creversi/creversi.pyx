@@ -4,8 +4,11 @@ from libcpp cimport bool
 
 import numpy as np
 cimport numpy as np
+np.import_array()
 
 import locale
+
+
 
 dtypeBitboard = np.dtype((np.uint8, 16))
 dtypeTurn = np.dtype(np.bool)

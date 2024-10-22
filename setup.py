@@ -1,5 +1,6 @@
 from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
+from Cython.Build import cythonize
 import numpy
 
 class my_build_ext(build_ext):
@@ -31,6 +32,7 @@ setup(
     name='creversi',
     version='0.0.1',
     packages=['creversi', 'creversi.gym_reversi', 'creversi.gym_reversi.envs'],
-    ext_modules=ext_modules,
-    cmdclass={'build_ext': my_build_ext}
+    ext_modules=cythonize(ext_modules),
+    cmdclass={'build_ext': my_build_ext},
+    setup_requires=['numpy', 'cython']
 )

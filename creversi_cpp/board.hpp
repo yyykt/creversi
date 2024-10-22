@@ -1,5 +1,7 @@
 #pragma once
 #include <array>
+#include <cstdint>
+#include <functional>
 #ifdef _MSC_VER
 #include <intrin.h>
 #define _popcnt64 __popcnt64
